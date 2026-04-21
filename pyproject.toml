@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-qwen35-tool-parser"
+version = "0.1.0"
+description = "Qwen3.5 Coder tool call parser for vLLM"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vllm_qwen35_tool_parser*"]
+
+[project.entry-points."vllm.tool_parsers"]
+qwen35coder = "vllm_qwen35_tool_parser.parser:Qwen35CoderToolParser"
